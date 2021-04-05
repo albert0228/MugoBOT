@@ -40,7 +40,6 @@ async def on_message(message):
         name = user.name
         if randomList[randomNum] == "나이변경":
             await channel.send(">이름 : "+name+"\n>부럼 결과 : "+randomList[randomNum]+"\n>부럼 시간 : "+str(random.randint(5, 30))+"분\n>나이 : "+str(random.randint(12,22))+"세")
-            
         else:
             await channel.send(">이름 : "+name+"\n>부럼 결과 : "+randomList[randomNum]+"\n>부럼 시간 : "+str(random.randint(5, 30))+"분")
         
