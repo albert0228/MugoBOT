@@ -32,7 +32,6 @@ async def on_message(message):
     id = message.author.id  # id라는 변수에는 메시지를 보낸사람의 ID를 담습니다.
     channel = message.channel  # channel이라는 변수에는 메시지를 받은 채널의 ID를 담습니다.
    
-
     if message.content == '!부럼':
         channel = message.channel
         randomNum = random.randint(0, 16)
