@@ -17,9 +17,6 @@ i = 0
 randomNum = 0
 randomList = ["멍체","냥체","중2병체","뀨체","TS","뱀파체(나른) ","성좌체","마들렌체(자신감뿜뿜)!","3인칭체","사벽이체 (제4의벽)","네모네모체(ㅇ>ㅁ)","나이변경","주인님체","나이변경","사극체","단답체","홍이체"]
 
-# 복사해 둔 토큰을 your_token에 넣어줍니당
-token = "ODI3ODc4NDg0OTI2NzkxNjgw.YGhb7A.tXQ-7Rml3od8VKmQI5n_gtqrr0M"
-
 
 # 봇이 구동되었을 때 동작되는 코드
 @client.event
