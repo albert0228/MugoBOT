@@ -1,41 +1,31 @@
-import asyncio
 import discord
-import random
-import openpyxl
 from discord.ext import commands
 import os
+import asyncio
+import random
+import openpyxl
 
 client = commands.Bot(command_prefix = '-')
 wb = openpyxl.load_workbook('Sheet.xlsx')
-test = wb["Sheet1"]   # '이름'이라는 워크시트 불러오기
+test = wb["Sheet1"]
 wordlist = []
-
-
 i = 0
-
-
-
-
 randomNum = 0
 randomList = ["멍체","냥체","중2병체","뀨체","TS","뱀파체(나른) ","성좌체","마들렌체(자신감뿜뿜)!","3인칭체","사벽이체 (제4의벽)","네모네모체(ㅇ>ㅁ)","나이변경","주인님체","나이변경","사극체","단답체","홍이체"]
 
-# 복사해 둔 토큰을 your_token에 넣어줍니당
-token = "ODI3ODc4NDg0OTI2NzkxNjgw.YGhb7A.tXQ-7Rml3od8VKmQI5n_gtqrr0M"
-
-
-
-
-
 @client.event
 async def on_ready():
-    await client.change_presence(status=discord.Status.online)
-    await client.change_presence(activity=discord.Game(name="'!부럼'으로 부럼을 까보세요!"))
-        
 
-# 디스코드에는 현재 본인이 어떤 게임을 플레이하는지 보여주는 기능이 있습니다.
-# 이 기능을 사용하여 봇의 상태를 간단하게 출력해줄 수 있습니다.
+  # [discord.Status.online = 온라인],[discord.Status.idle = 자리비움],[discord.Status.dnd = 다른용무],[discord.Status.offline = 오프라인]
+  await client.change_presence(status=discord.Status.online)
 
-# 봇이 새로운 메시지를 수신했을때 동작되는 코드입니다.
+  await client.change_presence(activity=discord.Game(name="!부럼으로 부럼을 까보세요!"))
+  #await client.change_presence(activity=discord.Streaming(name="스트림 방송중", url='링크'))
+  #await client.change_presence(activity=discord.Activity(type=discord.ActivityType.listening, name="노래 듣는중"))
+  #await client.change_presence(activity=discord.Activity(type=discord.ActivityType.watching, name="영상 시청중"))
+  
+  print("봇 이름:",client.user.name,"봇 아이디:",client.user.id,"봇 버전:",discord.__version__)
+  
 @client.event
 async def on_message(message):
     if message.author.bot:  # 만약 메시지를 보낸사람이 봇일 경우에는
@@ -80,11 +70,7 @@ async def on_message(message):
         
 
 
-        
-        
 
-
-client.run(os.environ(token))
-
+client.run(os.environ['token'])
 
 
