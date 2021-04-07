@@ -9,7 +9,7 @@ client = commands.Bot(command_prefix = '-')
 wordlist = []
 i = 0
 randomNum = 0
-randomList = ["멍체","냥체","중2병체","뀨체","TS","뱀파체(나른) ","성좌체","마들렌체(자신감뿜뿜)!","3인칭체","사벽이체 (제4의벽)","네모네모체(ㅇ>ㅁ)","나이변경","주인님체","나이변경","사극체","단답체","홍이체"]
+randomList = ["멍체","냥체","중2병체","뀨체","TS","뱀파체(나른) ","성좌체","마들렌체(자신감뿜뿜)!","3인칭체","사벽이체 (제4의벽)","네모네모체(ㅇ>ㅁ)","나이변경","주인님체","사극체","단답체","홍이체"]
 
 @client.event
 async def on_ready():
@@ -34,7 +34,7 @@ async def on_message(message):
    
     if message.content == '!부럼':
         channel = message.channel
-        randomNum = random.randint(0, 16)
+        randomNum = random.randint(0, 15)
         user = message.author
         name = user.display_name
         if randomList[randomNum] == "나이변경":
