@@ -6,10 +6,7 @@ import random
 
 
 client = commands.Bot(command_prefix = '-')
-wordlist = []
-i = 0
-randomNum = 0
-randomList = ["멍체","냥체","중2병체","뀨체","TS","뱀파체(나른) ","성좌체","마들렌체(자신감뿜뿜)!","3인칭체","사벽이체 (제4의벽)","네모네모체(ㅇ>ㅁ)","나이변경","주인님체","사극체","단답체","홍이체"]
+
 
 @client.event
 async def on_ready():
@@ -17,7 +14,7 @@ async def on_ready():
   # [discord.Status.online = 온라인],[discord.Status.idle = 자리비움],[discord.Status.dnd = 다른용무],[discord.Status.offline = 오프라인]
   await client.change_presence(status=discord.Status.online)
 
-  await client.change_presence(activity=discord.Game(name="!부럼으로 부럼을 까보세요!"))
+  await client.change_presence(activity=discord.Game(name="랜덤숫자봇"))
   #await client.change_presence(activity=discord.Streaming(name="스트림 방송중", url='링크'))
   #await client.change_presence(activity=discord.Activity(type=discord.ActivityType.listening, name="노래 듣는중"))
   #await client.change_presence(activity=discord.Activity(type=discord.ActivityType.watching, name="영상 시청중"))
@@ -32,16 +29,13 @@ async def on_message(message):
     id = message.author.id  # id라는 변수에는 메시지를 보낸사람의 ID를 담습니다.
     channel = message.channel  # channel이라는 변수에는 메시지를 받은 채널의 ID를 담습니다.
    
-    if message.content == '!부럼':
+    if message.content == '!뽑기':
         channel = message.channel
-        randomNum = random.randint(0, 15)
+        randomNum = random.randint(0, 367)
         user = message.author
         name = user.display_name
-        if randomList[randomNum] == "나이변경":
-            await channel.send(">이름 : "+name+"\n>부럼 결과 : "+randomList[randomNum]+"\n>부럼 시간 : "+str(random.randint(5, 30))+"분\n>나이 : "+str(random.randint(12,22))+"세")
-        else:
-            await channel.send(">이름 : "+name+"\n>부럼 결과 : "+randomList[randomNum]+"\n>부럼 시간 : "+str(random.randint(5, 30))+"분")
-        
+        await channel.send(name+"의 뽑기 결과 : "+str(Num))
+                
 
 
 
