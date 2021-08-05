@@ -34,7 +34,7 @@ async def on_message(message):
         randomNum = random.randint(0, 367)
         user = message.author
         name = user.display_name
-        await channel.send(name+"의 뽑기 결과 : "+str(Num))
+        await channel.send(name+"의 뽑기 결과 : "+str(randomNum))
                 
 
 
